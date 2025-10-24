@@ -56,8 +56,8 @@ jobs:
             --document-name "AWS-RunShellScript" \
             --parameters 'commands=[
               "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest || true",
-              "docker stop calculator-app || true",
-              "docker rm calculator-app || true",
-              "docker run -d --name calculator-app --restart unless-stopped -p 80:5000 ${{ secrets.DOCKERHUB_USERNAME }}/calculator-app:latest"
+              "docker stop cs6620-app || true",
+              "docker rm cs6620-app || true",
+              "docker run -d --name cs6620-app --restart unless-stopped -p 80:5000 ${{ secrets.DOCKERHUB_USERNAME }}/cs6620-app:latest"
             ]' \
             --comment "Deploying calculator app from GitHub Actions"
